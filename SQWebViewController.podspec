@@ -56,10 +56,7 @@ s.license      = "MIT"
 #  profile URL.
 #
 
-s.author             = { "艾星" => "862099730@qq.com" }
-# Or just: s.author    = "aiXing"
-# s.authors            = { "aiXing" => "862099730@qq.com" }
-# s.social_media_url   = "http://twitter.com/aiXing"
+s.author             = { "sq" => "semny.qu@gmail.com " }
 
 # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
