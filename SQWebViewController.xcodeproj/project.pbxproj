@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01513BF01C28F70700CB8238 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01513BEF1C28F70700CB8238 /* main.m */; };
+		01513BF31C28F70700CB8238 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01513BF21C28F70700CB8238 /* AppDelegate.m */; };
+		01513BF91C28F70700CB8238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01513BF71C28F70700CB8238 /* Main.storyboard */; };
+		01513BFB1C28F70700CB8238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01513BFA1C28F70700CB8238 /* Assets.xcassets */; };
+		01513BFE1C28F70700CB8238 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01513BFC1C28F70700CB8238 /* LaunchScreen.storyboard */; };
+		0197B9351D3F703300AF10F9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0197B9341D3F703300AF10F9 /* WebKit.framework */; };
+		01AA4F191D4F28C2008F2A2C /* TabbarViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA4F181D4F28C2008F2A2C /* TabbarViewController1.m */; };
+		01AA4F1C1D4F28DD008F2A2C /* TabbarViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA4F1B1D4F28DD008F2A2C /* TabbarViewController2.m */; };
+		01CDC15D1C2A41DF00D9AF53 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDC15C1C2A41DF00D9AF53 /* TableViewController.m */; };
+		6EA8355439FF1501C2694F70 /* libPods-SQWebViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C87751D0044DCA5233A4885 /* libPods-SQWebViewController.a */; };
+		A5860A15226F0655001E4E40 /* SQSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */; };
+		A5860A16226F0655001E4E40 /* SQWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */; };
+		A5860A17226F0655001E4E40 /* SQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A11226F0655001E4E40 /* SQWebViewController.m */; };
+		A5860A18226F0655001E4E40 /* SQWebViewControllerActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A13226F0655001E4E40 /* SQWebViewControllerActivity.m */; };
+		DCA3C59F1FB0302F008DB632 /* FullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3C59E1FB0302F008DB632 /* FullScreenViewController.m */; };
+		DCCF48241E7987C9009CF38E /* Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCCF48231E7987C9009CF38E /* Swift.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		013513EA1D60B83D003BDCEA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		013513EB1D60B83D003BDCEA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		01513BEB1C28F70700CB8238 /* SQWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01513BEF1C28F70700CB8238 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01513BF11C28F70700CB8238 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		01513BF21C28F70700CB8238 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01513BF81C28F70700CB8238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01513BFA1C28F70700CB8238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01513BFD1C28F70700CB8238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		01513BFF1C28F70700CB8238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0197B9341D3F703300AF10F9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		01AA4F171D4F28C2008F2A2C /* TabbarViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController1.h; sourceTree = "<group>"; };
+		01AA4F181D4F28C2008F2A2C /* TabbarViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController1.m; sourceTree = "<group>"; };
+		01AA4F1A1D4F28DD008F2A2C /* TabbarViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController2.h; sourceTree = "<group>"; };
+		01AA4F1B1D4F28DD008F2A2C /* TabbarViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController2.m; sourceTree = "<group>"; };
+		01CDC15B1C2A41DF00D9AF53 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		01CDC15C1C2A41DF00D9AF53 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		2C87751D0044DCA5233A4885 /* libPods-SQWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13CC1551E977227003AC1B2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		A13CC1561E977227003AC1B2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A5860A0D226F0655001E4E40 /* SQSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSecurityPolicy.h; sourceTree = "<group>"; };
+		A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSecurityPolicy.m; sourceTree = "<group>"; };
+		A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SQWebViewController.bundle; path = SQWebViewController/SQWebViewController.bundle; sourceTree = "<group>"; };
+		A5860A10226F0655001E4E40 /* SQWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQWebViewController.h; path = SQWebViewController/SQWebViewController.h; sourceTree = "<group>"; };
+		A5860A11226F0655001E4E40 /* SQWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQWebViewController.m; path = SQWebViewController/SQWebViewController.m; sourceTree = "<group>"; };
+		A5860A13226F0655001E4E40 /* SQWebViewControllerActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQWebViewControllerActivity.m; sourceTree = "<group>"; };
+		A5860A14226F0655001E4E40 /* SQWebViewControllerActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQWebViewControllerActivity.h; sourceTree = "<group>"; };
+		D49A848D015BFCE91EF4EC5E /* Pods-SQWebViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQWebViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQWebViewController/Pods-SQWebViewController.release.xcconfig"; sourceTree = "<group>"; };
+		DCA3C59D1FB0302F008DB632 /* FullScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenViewController.h; sourceTree = "<group>"; };
+		DCA3C59E1FB0302F008DB632 /* FullScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenViewController.m; sourceTree = "<group>"; };
+		DCCF48231E7987C9009CF38E /* Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Swift.pdf; sourceTree = "<group>"; };
+		ED865B1BF75947879BF381B3 /* Pods-SQWebViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQWebViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQWebViewController/Pods-SQWebViewController.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01513BE81C28F70700CB8238 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0197B9351D3F703300AF10F9 /* WebKit.framework in Frameworks */,
+				6EA8355439FF1501C2694F70 /* libPods-SQWebViewController.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01513BE21C28F70700CB8238 = {
+			isa = PBXGroup;
+			children = (
+				01513BED1C28F70700CB8238 /* SQWebViewController */,
+				01513BEC1C28F70700CB8238 /* Products */,
+				0BC220E02B437FE0466F4248 /* Pods */,
+				6757935A39C536BCAB9BA3A3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		01513BEC1C28F70700CB8238 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01513BEB1C28F70700CB8238 /* SQWebViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01513BED1C28F70700CB8238 /* SQWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				01513BF11C28F70700CB8238 /* AppDelegate.h */,
+				01513BF21C28F70700CB8238 /* AppDelegate.m */,
+				DCA3C59B1FB02FEE008DB632 /* Samples */,
+				01513C081C28F90300CB8238 /* SQWebViewController */,
+				01513BF71C28F70700CB8238 /* Main.storyboard */,
+				DCCF48231E7987C9009CF38E /* Swift.pdf */,
+				01513BFA1C28F70700CB8238 /* Assets.xcassets */,
+				01513BFC1C28F70700CB8238 /* LaunchScreen.storyboard */,
+				01513BFF1C28F70700CB8238 /* Info.plist */,
+				01513BEE1C28F70700CB8238 /* Supporting Files */,
+			);
+			path = SQWebViewController;
+			sourceTree = "<group>";
+		};
+		01513BEE1C28F70700CB8238 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01513BEF1C28F70700CB8238 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01513C081C28F90300CB8238 /* SQWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5860A12226F0655001E4E40 /* Activity */,
+				A5860A0C226F0655001E4E40 /* Security */,
+				A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */,
+				A5860A10226F0655001E4E40 /* SQWebViewController.h */,
+				A5860A11226F0655001E4E40 /* SQWebViewController.m */,
+			);
+			name = SQWebViewController;
+			sourceTree = "<group>";
+		};
+		0BC220E02B437FE0466F4248 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED865B1BF75947879BF381B3 /* Pods-SQWebViewController.debug.xcconfig */,
+				D49A848D015BFCE91EF4EC5E /* Pods-SQWebViewController.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6757935A39C536BCAB9BA3A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0197B9341D3F703300AF10F9 /* WebKit.framework */,
+				2C87751D0044DCA5233A4885 /* libPods-SQWebViewController.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5860A0C226F0655001E4E40 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				A5860A0D226F0655001E4E40 /* SQSecurityPolicy.h */,
+				A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */,
+			);
+			name = Security;
+			path = SQWebViewController/Security;
+			sourceTree = "<group>";
+		};
+		A5860A12226F0655001E4E40 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				A5860A13226F0655001E4E40 /* SQWebViewControllerActivity.m */,
+				A5860A14226F0655001E4E40 /* SQWebViewControllerActivity.h */,
+			);
+			name = Activity;
+			path = SQWebViewController/Activity;
+			sourceTree = "<group>";
+		};
+		DCA3C59B1FB02FEE008DB632 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				01CDC15B1C2A41DF00D9AF53 /* TableViewController.h */,
+				01CDC15C1C2A41DF00D9AF53 /* TableViewController.m */,
+				01AA4F171D4F28C2008F2A2C /* TabbarViewController1.h */,
+				01AA4F181D4F28C2008F2A2C /* TabbarViewController1.m */,
+				01AA4F1A1D4F28DD008F2A2C /* TabbarViewController2.h */,
+				01AA4F1B1D4F28DD008F2A2C /* TabbarViewController2.m */,
+				DCA3C59C1FB0300A008DB632 /* Presentation */,
+			);
+			name = Samples;
+			sourceTree = "<group>";
+		};
+		DCA3C59C1FB0300A008DB632 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DCA3C59D1FB0302F008DB632 /* FullScreenViewController.h */,
+				DCA3C59E1FB0302F008DB632 /* FullScreenViewController.m */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01513BEA1C28F70700CB8238 /* SQWebViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01513C021C28F70700CB8238 /* Build configuration list for PBXNativeTarget "SQWebViewController" */;
+			buildPhases = (
+				43867203D586B50CBAAFDB18 /* [CP] Check Pods Manifest.lock */,
+				01513BE71C28F70700CB8238 /* Sources */,
+				01513BE81C28F70700CB8238 /* Frameworks */,
+				01513BE91C28F70700CB8238 /* Resources */,
+				F3182DEE5A600ABFAF07F7DC /* [CP] Embed Pods Frameworks */,
+				90CC7504393E7254ABAF393F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQWebViewController;
+			productName = AXWebViewController;
+			productReference = 01513BEB1C28F70700CB8238 /* SQWebViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01513BE31C28F70700CB8238 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = AiXing;
+				TargetAttributes = {
+					01513BEA1C28F70700CB8238 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = VX8S5F7QT6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 01513BE61C28F70700CB8238 /* Build configuration list for PBXProject "SQWebViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 01513BE21C28F70700CB8238;
+			productRefGroup = 01513BEC1C28F70700CB8238 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01513BEA1C28F70700CB8238 /* SQWebViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01513BE91C28F70700CB8238 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01513BFE1C28F70700CB8238 /* LaunchScreen.storyboard in Resources */,
+				01513BFB1C28F70700CB8238 /* Assets.xcassets in Resources */,
+				A5860A16226F0655001E4E40 /* SQWebViewController.bundle in Resources */,
+				DCCF48241E7987C9009CF38E /* Swift.pdf in Resources */,
+				01513BF91C28F70700CB8238 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43867203D586B50CBAAFDB18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXWebViewController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90CC7504393E7254ABAF393F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AXWebViewController/Pods-AXWebViewController-resources.sh",
+				"${PODS_ROOT}/AXIndicatorView/AXIndicatorView/Classes/AXIndicatorView.bundle",
+				"${PODS_ROOT}/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD/AXPracticalHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQWebViewController/Pods-SQWebViewController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3182DEE5A600ABFAF07F7DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQWebViewController/Pods-SQWebViewController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01513BE71C28F70700CB8238 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AA4F191D4F28C2008F2A2C /* TabbarViewController1.m in Sources */,
+				01513BF31C28F70700CB8238 /* AppDelegate.m in Sources */,
+				DCA3C59F1FB0302F008DB632 /* FullScreenViewController.m in Sources */,
+				A5860A17226F0655001E4E40 /* SQWebViewController.m in Sources */,
+				A5860A18226F0655001E4E40 /* SQWebViewControllerActivity.m in Sources */,
+				01513BF01C28F70700CB8238 /* main.m in Sources */,
+				01AA4F1C1D4F28DD008F2A2C /* TabbarViewController2.m in Sources */,
+				01CDC15D1C2A41DF00D9AF53 /* TableViewController.m in Sources */,
+				A5860A15226F0655001E4E40 /* SQSecurityPolicy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		01513BF71C28F70700CB8238 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01513BF81C28F70700CB8238 /* Base */,
+				013513EA1D60B83D003BDCEA /* zh-Hans */,
+				A13CC1551E977227003AC1B2 /* zh-Hant */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01513BFC1C28F70700CB8238 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01513BFD1C28F70700CB8238 /* Base */,
+				013513EB1D60B83D003BDCEA /* zh-Hans */,
+				A13CC1561E977227003AC1B2 /* zh-Hant */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01513C001C28F70700CB8238 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		01513C011C28F70700CB8238 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01513C031C28F70700CB8238 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED865B1BF75947879BF381B3 /* Pods-SQWebViewController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = VX8S5F7QT6;
+				INFOPLIST_FILE = "$(SRCROOT)/SQWebViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sq.webvc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		01513C041C28F70700CB8238 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D49A848D015BFCE91EF4EC5E /* Pods-SQWebViewController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = VX8S5F7QT6;
+				INFOPLIST_FILE = "$(SRCROOT)/SQWebViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sq.webvc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01513BE61C28F70700CB8238 /* Build configuration list for PBXProject "SQWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01513C001C28F70700CB8238 /* Debug */,
+				01513C011C28F70700CB8238 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01513C021C28F70700CB8238 /* Build configuration list for PBXNativeTarget "SQWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01513C031C28F70700CB8238 /* Debug */,
+				01513C041C28F70700CB8238 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01513BE31C28F70700CB8238 /* Project object */;
+}
