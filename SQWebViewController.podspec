@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SQWebViewController"
-s.version      = "1.0.3"
+s.version      = "1.0.4"
 s.summary      = "A light weight web view controller in iOS."
   s.description  = "A light weight web view controller in iOS."
 
@@ -136,7 +136,6 @@ s.requires_arc = true
 # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 # s.dependency "JSONKit", "~> 1.4"
 
-s.source_files = 'Classes', 'SQWebViewController/SQWebViewController/*.{h,m}' 
 s.dependency "AXPracticalHUD"
 s.dependency "AXNavigationBackItemInjection"
 s.dependency "NJKWebViewProgress"
