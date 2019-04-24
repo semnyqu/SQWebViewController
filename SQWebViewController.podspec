@@ -16,8 +16,9 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SQWebViewController"
-s.version      = "1.0.1"
+s.version      = "1.0.2"
 s.summary      = "A light weight web view controller in iOS."
+  s.description  = "A light weight web view controller in iOS."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -42,7 +43,7 @@ s.homepage     = "https://github.com/semnyqu/SQWebViewController"
 #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
 #
 
-s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -56,7 +57,7 @@ s.license      = "MIT"
 #  profile URL.
 #
 
-s.author             = { "sq" => "semny.qu@gmail.com " }
+  s.author       = { "semnyqu" => "semny.qu@gmail.com" }
 
 # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
@@ -65,7 +66,7 @@ s.author             = { "sq" => "semny.qu@gmail.com " }
 #
 
 # s.platform     = :ios
-s.platform     = :ios, "7.0"
+s.platform     = :ios, "8.0"
 
 #  When using multiple platforms
 # s.ios.deployment_target = "5.0"
@@ -91,10 +92,10 @@ s.source       = { :git => "https://github.com/semnyqu/SQWebViewController.git",
 #  Not including the public_header_files will make all headers public.
 #
 
-s.source_files  = "SQWebViewController/SQWebViewController/*.{h,m}", "SQWebViewController/SQWebViewController/Activity/*.{h,m}", "SQWebViewController/SQWebViewController/Security/*.{h,m}"
-#s.exclude_files = "Classes/Exclude"
+#s.source_files  = "SQWebViewController/SQWebViewController/*.{h,m}","SQWebViewController/SQWebViewController/Activity/*.{h,m}", "SQWebViewController/SQWebViewController/Security/*.{h,m}"
 
-# s.public_header_files = "Classes/**/*.h"
+s.exclude_files = "Classes/Exclude"
+s.public_header_files = "Classes/**/*.{h,m}"
 
 
 # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,6 +135,8 @@ s.requires_arc = true
 
 # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 # s.dependency "JSONKit", "~> 1.4"
+
+s.source_files = 'Classes', 'SQWebViewController/SQWebViewController/*.{h,m}' 
 s.dependency "AXPracticalHUD"
 s.dependency "AXNavigationBackItemInjection"
 s.dependency "NJKWebViewProgress"
