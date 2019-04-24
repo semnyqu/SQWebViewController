@@ -317,6 +317,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     return self;
 }
 
+#pragma mark - Life cycle
 - (void)loadView {
     [super loadView];
 
@@ -353,6 +354,13 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 
     // Config navigation item
     self.navigationItem.leftItemsSupplementBackButton = YES;
+    
+    NSString *titleStr = nil;
+    if (self.title.length > 0) {
+        //Use default title
+        titleStr = self.title;
+    }
+    self.navigationItem.title = titleStr;
     
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
     [self progressProxy];
@@ -989,7 +997,16 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 }
 - (void)didStartLoad{
     _backgroundLabel.text = SQWebViewControllerLocalizedString(@"loading", @"Loading");
-    self.navigationItem.title = SQWebViewControllerLocalizedString(@"loading", @"Loading");
+    //self.navigationItem.title = SQWebViewControllerLocalizedString(@"loading", @"Loading");
+    
+    NSString *titleStr = nil;
+    if (self.title.length > 0) {
+        titleStr = self.title;
+    }else{
+        titleStr = SQWebViewControllerLocalizedString(@"loading", @"Loading");
+    }
+    self.navigationItem.title = titleStr;
+    
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
@@ -1084,7 +1101,18 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     }
     // #endif
     _backgroundLabel.text = [NSString stringWithFormat:@"%@%@",SQWebViewControllerLocalizedString(@"load failed:", nil) , error.localizedDescription];
-    self.navigationItem.title = SQWebViewControllerLocalizedString(@"load failed", nil);
+    //self.navigationItem.title = SQWebViewControllerLocalizedString(@"load failed", nil);
+    
+    NSString *titleStr = nil;
+    if (_isTitleFixedCoded && self.title.length > 0) {
+        //Use default title
+        titleStr = self.title;
+    }else{
+        //Default load failed title
+        titleStr = SQWebViewControllerLocalizedString(@"load failed", nil);
+    }
+    self.navigationItem.title = titleStr;
+    
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
     }
@@ -1623,16 +1651,40 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 
 #pragma mark - Helper
 - (void)_updateTitleOfWebVC {
-    NSString *title = self.title;
+//    NSString *title = self.title;
+//#if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
+//    title = title.length>0 ? title: [_webView title];
+//#else
+//    title = title.length>0 ? title: [_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+//#endif
+//    if (title.length > _maxAllowedTitleLength) {
+//        title = [[title substringToIndex:_maxAllowedTitleLength-1] stringByAppendingString:@"…"];
+//    }
+//    self.navigationItem.title = title.length>0 ? title : SQWebViewControllerLocalizedString(@"browsing the web", @"browsing the web");
+    
+    
+    
+    
+    NSString *titleStr = self.title;
+    NSInteger titleLength = titleStr.length;
 #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
-    title = title.length>0 ? title: [_webView title];
+    titleStr = (titleLength>0&&_isTitleFixedCoded) ? titleStr: [_webView title];
 #else
-    title = title.length>0 ? title: [_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    titleStr = (titleLength>0&&_isTitleFixedCoded) ? titleStr: [_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 #endif
-    if (title.length > _maxAllowedTitleLength) {
-        title = [[title substringToIndex:_maxAllowedTitleLength-1] stringByAppendingString:@"…"];
+    if (titleStr.length > _maxAllowedTitleLength) {
+        titleStr = [[titleStr substringToIndex:_maxAllowedTitleLength-1] stringByAppendingString:@"…"];
     }
-    self.navigationItem.title = title.length>0 ? title : SQWebViewControllerLocalizedString(@"browsing the web", @"browsing the web");
+    self.navigationItem.title = (titleStr.length>0) ? titleStr : SQWebViewControllerLocalizedString(@"browsing the web", @"browsing the web");
+    
+//    if (_isTitleFixedCoded && self.title.length > 0) {
+//        //Use default title
+//        titleStr = self.title;
+//    }else{
+//        //Default load failed title
+//        titleStr = SQWebViewControllerLocalizedString(@"loading", @"Loading");
+//    }
+//    self.navigationItem.title = titleStr;
 }
 
 - (void)updateFrameOfProgressView {

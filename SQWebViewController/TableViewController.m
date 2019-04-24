@@ -39,6 +39,7 @@
         {
             SQWebViewController *webVC = [[SQWebViewController alloc] initWithURL:[NSURL fileURLWithPath:[NSBundle.mainBundle pathForResource:@"Swift" ofType:@"pdf"]]];
             webVC.title = @"Swift.pdf";
+            webVC.isTitleFixedCoded = YES;
             webVC.showsToolBar = NO;
             if (AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE()) {
                 webVC.webView.allowsLinkPreview = YES;
@@ -51,6 +52,8 @@
             SQWebViewController *webVC = [[SQWebViewController alloc] initWithAddress:@"http://www.baidu.com"];
             webVC.showsToolBar = NO;
             // webVC.showsNavigationCloseBarButtonItem = NO;
+            webVC.title = @"TEST_TEST";
+            webVC.isTitleFixedCoded = NO;
             if (AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE()) {
                 webVC.webView.allowsLinkPreview = YES;
             }
@@ -65,12 +68,16 @@
             [self presentViewController:nav animated:YES completion:NULL];
             webVC.showsToolBar = YES;
             webVC.navigationType = 1;
+            webVC.title = nil;
+            webVC.isTitleFixedCoded = YES;
         }
             break;
         case 3: {
             SQWebViewController *webVC = [[SQWebViewController alloc] initWithAddress:@"https://github.com/devedbox/SQWebViewController"];
             webVC.showsToolBar = NO;
             webVC.showsBackgroundLabel = NO;
+            webVC.title = @"TEST_TEST";
+            webVC.isTitleFixedCoded = YES;
             // webVC.showsNavigationBackBarButtonItemTitle = NO;
             if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_9_0) {
                 webVC.webView.allowsLinkPreview = YES;
