@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SQWebViewController"
-s.version      = "1.0.2"
+s.version      = "1.0.3"
 s.summary      = "A light weight web view controller in iOS."
   s.description  = "A light weight web view controller in iOS."
 
@@ -43,7 +43,7 @@ s.homepage     = "https://github.com/semnyqu/SQWebViewController"
 #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
 #
 
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -92,10 +92,10 @@ s.source       = { :git => "https://github.com/semnyqu/SQWebViewController.git",
 #  Not including the public_header_files will make all headers public.
 #
 
-#s.source_files  = "SQWebViewController/SQWebViewController/*.{h,m}","SQWebViewController/SQWebViewController/Activity/*.{h,m}", "SQWebViewController/SQWebViewController/Security/*.{h,m}"
+s.source_files  = "SQWebViewController/SQWebViewController/*.{h,m}","SQWebViewController/SQWebViewController/Activity/*.{h,m}", "SQWebViewController/SQWebViewController/Security/*.{h,m}"
 
-s.exclude_files = "Classes/Exclude"
-s.public_header_files = "Classes/**/*.{h,m}"
+#s.exclude_files = "Classes/Exclude"
+#s.public_header_files = "Classes/**/*.{h,m}"
 
 
 # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
