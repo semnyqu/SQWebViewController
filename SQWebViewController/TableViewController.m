@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "SQWebViewController.h"
 #import <AXPracticalHUD/AXPracticalHUD.h>
+#import "TestWebViewController.h"
 
 @interface TableViewController () <UITextFieldDelegate>
 
@@ -49,15 +50,17 @@
             break;
         case 1:
         {
-            SQWebViewController *webVC = [[SQWebViewController alloc] initWithAddress:@"http://www.baidu.com"];
-            webVC.showsToolBar = NO;
-            // webVC.showsNavigationCloseBarButtonItem = NO;
-            webVC.title = @"TEST_TEST";
-            webVC.isTitleFixedCoded = NO;
-            if (AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE()) {
-                webVC.webView.allowsLinkPreview = YES;
-            }
-            [self.navigationController pushViewController:webVC animated:YES];
+//            SQWebViewController *webVC = [[SQWebViewController alloc] initWithAddress:@"http://www.baidu.com"];
+//            webVC.showsToolBar = NO;
+//            // webVC.showsNavigationCloseBarButtonItem = NO;
+//            webVC.title = @"TEST_TEST";
+//            webVC.isTitleFixedCoded = NO;
+//            if (AX_WEB_VIEW_CONTROLLER_iOS9_0_AVAILABLE()) {
+//                webVC.webView.allowsLinkPreview = YES;
+//            }
+            TestWebViewController *testVC = [[TestWebViewController alloc] init];
+            testVC.title = @"TEST_WEBVC";
+            [self.navigationController pushViewController:testVC animated:YES];
         }
             break;
         case 2:

@@ -402,9 +402,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     
     if (_navigationType == SQWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
-    }
-    
-    if (_navigationType == SQWebViewControllerNavigationBarItem) {
+    }else if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
     }
     
@@ -775,6 +773,10 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 - (UIBarButtonItem *)navigationCloseItem {
     return _navigationCloseBarButtonItem;
 }
+
+- (UIBarButtonItem *)navigationBackItem{
+    return _navigationBackBarButtonItem;
+}
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
 - (NJKWebViewProgress *)progressProxy {
     if (_progressProxy) return _progressProxy;
@@ -922,6 +924,10 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     [self updateNavigationItems];
 }
 
+- (void)setNavigationBackItem:(UIBarButtonItem *)navigationBackItem {
+    _navigationBackBarButtonItem = navigationBackItem;
+    [self updateNavigationItems];
+}
 #pragma mark - Protected
 //load 本地缓存默认页
 - (void)inner_loadDefault{
@@ -1010,8 +1016,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
-    }
-    if (_navigationType == SQWebViewControllerNavigationToolItem) {
+    }else if (_navigationType == SQWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
     }
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
@@ -1062,8 +1067,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
-    }
-    if (_navigationType == SQWebViewControllerNavigationToolItem) {
+    }else if (_navigationType == SQWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
     }
     
@@ -1115,8 +1119,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
-    }
-    if (_navigationType == SQWebViewControllerNavigationToolItem) {
+    }else if (_navigationType == SQWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
     }
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
@@ -1428,8 +1431,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     // Update the items.
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
-    }
-    if (_navigationType == SQWebViewControllerNavigationToolItem) {
+    }else if (_navigationType == SQWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
     }
     // Call the decision handler to allow to load web page.
@@ -1609,8 +1611,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     }
     if (_navigationType == SQWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
-    }
-    if (_navigationType == SQWebViewControllerNavigationToolItem) {
+    }else if (_navigationType == SQWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
     }
     return YES;
@@ -1903,6 +1904,35 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 }
 
 - (void)updateNavigationItems {
+//    [self.navigationItem setLeftBarButtonItems:nil animated:NO];
+//    if (self.webView.canGoBack/* || self.webView.backForwardList.backItem*/) {// Web view can go back means a lot requests exist.
+//        UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+//        spaceButtonItem.width = -6.5;
+//        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+//        if (self.navigationController.viewControllers.count == 1) {
+//            NSMutableArray *leftBarButtonItems = [NSMutableArray arrayWithArray:@[spaceButtonItem,self.navigationBackBarButtonItem]];
+//            // If the top view controller of the navigation controller is current vc, the close item is ignored.
+//            if (self.showsNavigationCloseBarButtonItem && self.navigationController.topViewController != self){
+//                [leftBarButtonItems addObject:self.navigationCloseBarButtonItem];
+//            }
+//
+//            [self.navigationItem setLeftBarButtonItems:leftBarButtonItems animated:NO];
+//        } else {
+//            if (self.showsNavigationCloseBarButtonItem){
+//                [self.navigationItem setLeftBarButtonItems:@[self.navigationCloseBarButtonItem] animated:NO];
+//            }else{
+//                [self.navigationItem setLeftBarButtonItems:@[] animated:NO];
+//            }
+//        }
+//    } else {
+//        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+//        [self.navigationItem setLeftBarButtonItems:nil animated:NO];
+//    }
+    
+    [self _innerUpdateNavigationItems];
+}
+
+- (void)_innerUpdateNavigationItems{
     [self.navigationItem setLeftBarButtonItems:nil animated:NO];
     if (self.webView.canGoBack/* || self.webView.backForwardList.backItem*/) {// Web view can go back means a lot requests exist.
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -1918,14 +1948,23 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
             [self.navigationItem setLeftBarButtonItems:leftBarButtonItems animated:NO];
         } else {
             if (self.showsNavigationCloseBarButtonItem){
-                [self.navigationItem setLeftBarButtonItems:@[self.navigationCloseBarButtonItem] animated:NO];
+                [self.navigationItem setLeftBarButtonItems:@[spaceButtonItem,self.navigationBackBarButtonItem, self.navigationCloseBarButtonItem] animated:NO];
             }else{
-                [self.navigationItem setLeftBarButtonItems:@[] animated:NO];
+                [self.navigationItem setLeftBarButtonItems:@[spaceButtonItem,self.navigationBackBarButtonItem] animated:NO];
             }
         }
     } else {
-        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        [self.navigationItem setLeftBarButtonItems:nil animated:NO];
+        //        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        //        [self.navigationItem setLeftBarButtonItems:nil animated:NO];
+        
+        [self.navigationItem setBackBarButtonItem:nil];
+        [self.navigationItem setHidesBackButton:YES];
+        
+        UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        spaceButtonItem.width = -6.5;
+        NSMutableArray *leftBarButtonItems = [NSMutableArray arrayWithArray:@[spaceButtonItem,self.navigationBackBarButtonItem]];
+        // If the top view controller of the navigation controller is current vc, the close item is ignored.
+        [self.navigationItem setLeftBarButtonItems:leftBarButtonItems animated:NO];
     }
 }
 

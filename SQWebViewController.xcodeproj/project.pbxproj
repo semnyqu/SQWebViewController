@@ -17,6 +17,8 @@
 		01AA4F1C1D4F28DD008F2A2C /* TabbarViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA4F1B1D4F28DD008F2A2C /* TabbarViewController2.m */; };
 		01CDC15D1C2A41DF00D9AF53 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CDC15C1C2A41DF00D9AF53 /* TableViewController.m */; };
 		6EA8355439FF1501C2694F70 /* libPods-SQWebViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C87751D0044DCA5233A4885 /* libPods-SQWebViewController.a */; };
+		A53B4F1822714F3200FE73A7 /* TestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53B4F1622714F3200FE73A7 /* TestWebViewController.m */; };
+		A53B4F1922714F3200FE73A7 /* TestWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53B4F1722714F3200FE73A7 /* TestWebViewController.xib */; };
 		A5860A15226F0655001E4E40 /* SQSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */; };
 		A5860A16226F0655001E4E40 /* SQWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */; };
 		A5860A17226F0655001E4E40 /* SQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A11226F0655001E4E40 /* SQWebViewController.m */; };
@@ -46,6 +48,9 @@
 		2C87751D0044DCA5233A4885 /* libPods-SQWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13CC1551E977227003AC1B2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		A13CC1561E977227003AC1B2 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A53B4F1522714F3200FE73A7 /* TestWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestWebViewController.h; sourceTree = "<group>"; };
+		A53B4F1622714F3200FE73A7 /* TestWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWebViewController.m; sourceTree = "<group>"; };
+		A53B4F1722714F3200FE73A7 /* TestWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestWebViewController.xib; sourceTree = "<group>"; };
 		A5860A0D226F0655001E4E40 /* SQSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSecurityPolicy.h; sourceTree = "<group>"; };
 		A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSecurityPolicy.m; sourceTree = "<group>"; };
 		A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SQWebViewController.bundle; path = SQWebViewController/SQWebViewController.bundle; sourceTree = "<group>"; };
@@ -176,6 +181,9 @@
 				01AA4F1A1D4F28DD008F2A2C /* TabbarViewController2.h */,
 				01AA4F1B1D4F28DD008F2A2C /* TabbarViewController2.m */,
 				DCA3C59C1FB0300A008DB632 /* Presentation */,
+				A53B4F1522714F3200FE73A7 /* TestWebViewController.h */,
+				A53B4F1622714F3200FE73A7 /* TestWebViewController.m */,
+				A53B4F1722714F3200FE73A7 /* TestWebViewController.xib */,
 			);
 			name = Samples;
 			sourceTree = "<group>";
@@ -254,6 +262,7 @@
 				01513BFE1C28F70700CB8238 /* LaunchScreen.storyboard in Resources */,
 				01513BFB1C28F70700CB8238 /* Assets.xcassets in Resources */,
 				A5860A16226F0655001E4E40 /* SQWebViewController.bundle in Resources */,
+				A53B4F1922714F3200FE73A7 /* TestWebViewController.xib in Resources */,
 				DCCF48241E7987C9009CF38E /* Swift.pdf in Resources */,
 				01513BF91C28F70700CB8238 /* Main.storyboard in Resources */,
 			);
@@ -316,6 +325,7 @@
 				01AA4F1C1D4F28DD008F2A2C /* TabbarViewController2.m in Sources */,
 				01CDC15D1C2A41DF00D9AF53 /* TableViewController.m in Sources */,
 				A5860A15226F0655001E4E40 /* SQSecurityPolicy.m in Sources */,
+				A53B4F1822714F3200FE73A7 /* TestWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
