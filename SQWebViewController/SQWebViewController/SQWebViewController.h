@@ -171,6 +171,11 @@ API_AVAILABLE(ios(7.0))
 //YES:需要使用vc title作为初始title，如果vc title没有设置，则使用默认的动态loading加载完成后显示web上的title；NO：使用默认的动态loading加载完成后显示web上的title，就算vc title设置了也没有用；
 @property(assign, nonatomic) BOOL isTitleFixedCoded;
 
+/// Navigation progress 进度颜色
+@property(readwrite, nonatomic) UIColor *progressTintColor;
+/// Navigation progress 背景颜色
+@property(readwrite, nonatomic) UIColor *trackTintColor;
+
 /// Get a instance of `SQWebViewController` by a url string.
 ///
 /// @param urlString a string of url to be loaded.

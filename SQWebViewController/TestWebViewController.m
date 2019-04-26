@@ -44,6 +44,10 @@
     webVC.showsNavigationBackBarButtonItemTitle = NO;
     webVC.navigationBackItem = self.navigationBackBarButtonItem;
     webVC.navigationCloseItem = self.navigationCloseBarButtonItem;
+    
+    
+    webVC.progressTintColor = UIColor.yellowColor;
+    webVC.trackTintColor = UIColor.lightGrayColor;
     [self.navigationController pushViewController:webVC animated:YES];
 }
 

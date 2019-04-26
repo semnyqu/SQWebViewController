@@ -353,7 +353,8 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     [self inner_loadRequest];
 
     // Config navigation item
-    self.navigationItem.leftItemsSupplementBackButton = YES;
+    //去掉返回backBarButtonItem按键,修复left和back button都显示的BUG 
+    //self.navigationItem.leftItemsSupplementBackButton = YES;
     
     NSString *titleStr = nil;
     if (self.title.length > 0) {
@@ -361,14 +362,29 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         titleStr = self.title;
     }
     self.navigationItem.title = titleStr;
-    
+    //进度条颜色
+    UIColor *progressTintColor = self.navigationController.navigationBar.tintColor;
+    if (self.progressTintColor) {
+        progressTintColor = self.progressTintColor;
+    }
+    //进度条背景颜色
+    UIColor *trackTintColor = nil;
+    if (self.trackTintColor) {
+        trackTintColor = self.trackTintColor;
+    }
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
     [self progressProxy];
     self.view.backgroundColor = [UIColor colorWithRed:0.180 green:0.192 blue:0.196 alpha:1.00];
     self.progressView.progressBarView.backgroundColor = self.navigationController.navigationBar.tintColor;
+    //进度条颜色设置
+    self.progressView.progressBarView.backgroundColor = progressTintColor;
+    self.progressView.backgroundColor = trackTintColor;
 #else
     self.view.backgroundColor = [UIColor whiteColor];
-    self.progressView.progressTintColor = self.navigationController.navigationBar.tintColor;
+    //进度条颜色设置
+    self.progressView.progressTintColor = progressTintColor;
+    self.progressView.trackTintColor = trackTintColor;
+    
     [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
     
     // [_webView.scrollView addObserver:self forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionNew context:NULL];
@@ -445,7 +461,8 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     }
     
-    [self.navigationItem setLeftBarButtonItems:nil animated:NO];
+    //去掉这行，修复返回闪现backbutton『返回』文字的BUG
+    //[self.navigationItem setLeftBarButtonItems:nil animated:NO];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && _showsToolBar && _navigationType == SQWebViewControllerNavigationToolItem) {
         [self.navigationController setToolbarHidden:YES animated:animated];
@@ -1936,7 +1953,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     [self.navigationItem setLeftBarButtonItems:nil animated:NO];
     if (self.webView.canGoBack/* || self.webView.backForwardList.backItem*/) {// Web view can go back means a lot requests exist.
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        spaceButtonItem.width = -6.5;
+        spaceButtonItem.width = -3.0f;
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
         if (self.navigationController.viewControllers.count == 1) {
             NSMutableArray *leftBarButtonItems = [NSMutableArray arrayWithArray:@[spaceButtonItem,self.navigationBackBarButtonItem]];
@@ -1954,14 +1971,14 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
             }
         }
     } else {
-        //        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+                self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         //        [self.navigationItem setLeftBarButtonItems:nil animated:NO];
         
-        [self.navigationItem setBackBarButtonItem:nil];
-        [self.navigationItem setHidesBackButton:YES];
+//        [self.navigationItem setBackBarButtonItem:nil];
+//        [self.navigationItem setHidesBackButton:YES];
         
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        spaceButtonItem.width = -6.5;
+        spaceButtonItem.width = -3.0f;
         NSMutableArray *leftBarButtonItems = [NSMutableArray arrayWithArray:@[spaceButtonItem,self.navigationBackBarButtonItem]];
         // If the top view controller of the navigation controller is current vc, the close item is ignored.
         [self.navigationItem setLeftBarButtonItems:leftBarButtonItems animated:NO];
