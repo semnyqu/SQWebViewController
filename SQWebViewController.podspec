@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SQWebViewController"
-s.version      = "1.0.7"
+s.version      = "1.0.8"
 s.summary      = "A light weight web view controller in iOS."
   s.description  = "A light weight web view controller in iOS."
 

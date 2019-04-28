@@ -349,8 +349,6 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 //        // Handle none resource case.
 //        [self loadURL:[NSURL fileURLWithPath:kAX404NotFoundHTMLPath]];
 //    }
-    
-    [self inner_loadRequest];
 
     // Config navigation item
     //去掉返回backBarButtonItem按键,修复left和back button都显示的BUG 
@@ -375,7 +373,6 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
     [self progressProxy];
     self.view.backgroundColor = [UIColor colorWithRed:0.180 green:0.192 blue:0.196 alpha:1.00];
-    self.progressView.progressBarView.backgroundColor = self.navigationController.navigationBar.tintColor;
     //进度条颜色设置
     self.progressView.progressBarView.backgroundColor = progressTintColor;
     self.progressView.backgroundColor = trackTintColor;
@@ -389,6 +386,9 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     
     // [_webView.scrollView addObserver:self forKeyPath:@"backgroundColor" options:NSKeyValueObservingOptionNew context:NULL];
 #endif
+    
+    //网络加载放在后面
+    [self inner_loadRequest];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -945,6 +945,40 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     _navigationBackBarButtonItem = navigationBackItem;
     [self updateNavigationItems];
 }
+
+-(void)setProgressTintColor:(UIColor *)progressTintColor{
+    //进度条颜色
+    UIColor *progressTintColor2 = self.navigationController.navigationBar.tintColor;
+    if (progressTintColor) {
+        progressTintColor2 = progressTintColor;
+    }
+    _progressTintColor = progressTintColor2;
+    
+#if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
+    //进度条颜色设置
+    self.progressView.progressBarView.backgroundColor = progressTintColor2;
+#else
+    //进度条颜色设置
+    self.progressView.progressTintColor = progressTintColor;
+#endif
+}
+
+- (void)setTrackTintColor:(UIColor *)trackTintColor{
+    //进度条背景颜色
+    UIColor *trackTintColor2 = nil;
+    if (trackTintColor) {
+        trackTintColor2 = trackTintColor;
+    }
+    _trackTintColor = trackTintColor2;
+#if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
+    //进度条颜色设置
+    self.progressView.backgroundColor = trackTintColor2;
+#else
+    //进度条颜色设置
+    self.progressView.trackTintColor = trackTintColor;
+#endif
+}
+
 #pragma mark - Protected
 //load 本地缓存默认页
 - (void)inner_loadDefault{
@@ -1038,6 +1072,8 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     }
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
     _progressView.progress = 0.0;
+    //显示progress
+    _progressView.hidden = NO;
     _updating = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updatingProgress:) userInfo:nil repeats:YES];
 #endif
     if (_delegate && [_delegate respondsToSelector:@selector(webViewControllerDidStartLoad:)]) {
@@ -1108,6 +1144,8 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (_progressView.progress != 1.0) {
             [_progressView setProgress:1.0 animated:YES];
+            //隐藏progress
+            _progressView.hidden = YES;
         }
     });
 #endif
@@ -1669,20 +1707,6 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 
 #pragma mark - Helper
 - (void)_updateTitleOfWebVC {
-//    NSString *title = self.title;
-//#if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
-//    title = title.length>0 ? title: [_webView title];
-//#else
-//    title = title.length>0 ? title: [_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-//#endif
-//    if (title.length > _maxAllowedTitleLength) {
-//        title = [[title substringToIndex:_maxAllowedTitleLength-1] stringByAppendingString:@"…"];
-//    }
-//    self.navigationItem.title = title.length>0 ? title : SQWebViewControllerLocalizedString(@"browsing the web", @"browsing the web");
-    
-    
-    
-    
     NSString *titleStr = self.title;
     NSInteger titleLength = titleStr.length;
 #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
@@ -1694,15 +1718,6 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         titleStr = [[titleStr substringToIndex:_maxAllowedTitleLength-1] stringByAppendingString:@"…"];
     }
     self.navigationItem.title = (titleStr.length>0) ? titleStr : SQWebViewControllerLocalizedString(@"browsing the web", @"browsing the web");
-    
-//    if (_isTitleFixedCoded && self.title.length > 0) {
-//        //Use default title
-//        titleStr = self.title;
-//    }else{
-//        //Default load failed title
-//        titleStr = SQWebViewControllerLocalizedString(@"loading", @"Loading");
-//    }
-//    self.navigationItem.title = titleStr;
 }
 
 - (void)updateFrameOfProgressView {
@@ -2124,7 +2139,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     
     float progress = self.progress;
     if (progress < 1) {
-        if (self.hidden) {
+        if (self.hidden && !self.ax_finished) {
             self.hidden = NO;
         }
     } else if (progress >= 1) {
@@ -2133,6 +2148,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         } completion:^(BOOL finished) {
             if (finished) {
                 self.hidden = YES;
+                self.ax_finished = YES;
                 self.progress = 0.0;
                 self.alpha = 1.0;
                 // Update the navigation itmes if the delegate is not being triggered.
@@ -2162,6 +2178,15 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     // Using assign to fix issue: https://github.com/devedbox/SQWebViewController/issues/23
     objc_setAssociatedObject(self, @selector(ax_webViewController), ax_webViewController, OBJC_ASSOCIATION_ASSIGN);
 }
+
+- (BOOL)ax_finished {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setAx_finished:(BOOL)ax_finished {
+    objc_setAssociatedObject(self, @selector(ax_finished), @(ax_finished), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 @end
 #endif
 #if !AX_WEB_VIEW_CONTROLLER_USING_WEBKIT

@@ -19,6 +19,7 @@
 		6EA8355439FF1501C2694F70 /* libPods-SQWebViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C87751D0044DCA5233A4885 /* libPods-SQWebViewController.a */; };
 		A53B4F1822714F3200FE73A7 /* TestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53B4F1622714F3200FE73A7 /* TestWebViewController.m */; };
 		A53B4F1922714F3200FE73A7 /* TestWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53B4F1722714F3200FE73A7 /* TestWebViewController.xib */; };
+		A53B4F1C22753B4A00FE73A7 /* TestWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53B4F1B22753B4A00FE73A7 /* TestWebVC.m */; };
 		A5860A15226F0655001E4E40 /* SQSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */; };
 		A5860A16226F0655001E4E40 /* SQWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */; };
 		A5860A17226F0655001E4E40 /* SQWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5860A11226F0655001E4E40 /* SQWebViewController.m */; };
@@ -51,6 +52,8 @@
 		A53B4F1522714F3200FE73A7 /* TestWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestWebViewController.h; sourceTree = "<group>"; };
 		A53B4F1622714F3200FE73A7 /* TestWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWebViewController.m; sourceTree = "<group>"; };
 		A53B4F1722714F3200FE73A7 /* TestWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestWebViewController.xib; sourceTree = "<group>"; };
+		A53B4F1A22753B4A00FE73A7 /* TestWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestWebVC.h; sourceTree = "<group>"; };
+		A53B4F1B22753B4A00FE73A7 /* TestWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWebVC.m; sourceTree = "<group>"; };
 		A5860A0D226F0655001E4E40 /* SQSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSecurityPolicy.h; sourceTree = "<group>"; };
 		A5860A0E226F0655001E4E40 /* SQSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSecurityPolicy.m; sourceTree = "<group>"; };
 		A5860A0F226F0655001E4E40 /* SQWebViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SQWebViewController.bundle; path = SQWebViewController/SQWebViewController.bundle; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				A53B4F1522714F3200FE73A7 /* TestWebViewController.h */,
 				A53B4F1622714F3200FE73A7 /* TestWebViewController.m */,
 				A53B4F1722714F3200FE73A7 /* TestWebViewController.xib */,
+				A53B4F1A22753B4A00FE73A7 /* TestWebVC.h */,
+				A53B4F1B22753B4A00FE73A7 /* TestWebVC.m */,
 			);
 			name = Samples;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				A5860A17226F0655001E4E40 /* SQWebViewController.m in Sources */,
 				A5860A18226F0655001E4E40 /* SQWebViewControllerActivity.m in Sources */,
 				01513BF01C28F70700CB8238 /* main.m in Sources */,
+				A53B4F1C22753B4A00FE73A7 /* TestWebVC.m in Sources */,
 				01AA4F1C1D4F28DD008F2A2C /* TabbarViewController2.m in Sources */,
 				01CDC15D1C2A41DF00D9AF53 /* TableViewController.m in Sources */,
 				A5860A15226F0655001E4E40 /* SQSecurityPolicy.m in Sources */,
